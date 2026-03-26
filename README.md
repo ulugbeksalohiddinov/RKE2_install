@@ -38,3 +38,28 @@ Ya’ni siz worker yoki yana bir server node ni mavjud master clusterga ulayapsi
 
         systemctl start rke2-agent.service
         journalctl -u rke2-agent -f
+
+---------------------------------------------------------
+
+Client bo'lib kubectl bilan clusterga ulanish
+
+        mkdir -p ~/.kube
+        cd .kube/
+        nano config
+        
+        cat /etc/rancher/rke2/rke2.yaml 
+shu yerdagi configni config filega tashlash kerak va server ipsini o'zgartirib qo'yish kerak
+
+        chown $(whoami):$(whoami) ~/.kube/config
+        chmod 600 ~/.kube/config
+
+Kubectlni o'rnatish proxy bilan
+
+        curl -x http://172.23.11.101:2002 -LO "https://dl.k8s.io/release/v1.34.4/bin/linux/amd64/kubectl"
+        chmod +x kubectl
+        sudo mv kubectl /usr/local/bin/
+        kubectl version --client
+
+        kubectl get nodes
+
+
