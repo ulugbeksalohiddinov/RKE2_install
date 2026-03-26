@@ -29,7 +29,8 @@ Ya’ni siz worker yoki yana bir server node ni mavjud master clusterga ulayapsi
         nano /etc/rancher/rke2/config.yaml 
 
         server: https://<server>:9345 # masterni ip addresi ko'rsatiladi
-        token: <token from server node> # masterdan tokenolinib shu yerga qo'yiladi. cat /var/lib/rancher/rke2/server/node-token
+        token: <token from server node> # masterdan token olinib shu yerga qo'yiladi. 
+        cat /var/lib/rancher/rke2/server/node-token
 
         Misol:
         server: https://172.26.47.50:9345
