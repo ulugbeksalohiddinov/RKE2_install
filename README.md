@@ -55,7 +55,7 @@ shu yerdagi configni config filega tashlash kerak va server ipsini o'zgartirib q
 
 Kubectlni o'rnatish proxy bilan
 
-        curl -x http://172.23.11.101:2002 -LO "https://dl.k8s.io/release/v1.34.4/bin/linux/amd64/kubectl"
+        curl -x http://172.29.55.14:2002 -LO "https://dl.k8s.io/release/v1.34.4/bin/linux/amd64/kubectl"
         chmod +x kubectl
         sudo mv kubectl /usr/local/bin/
         kubectl version --client
